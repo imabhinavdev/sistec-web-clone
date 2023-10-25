@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+* {
+  font-family: poppins;
+}
+html,
+body {
+  height: 100%;
+}
+.navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.navDiv {
+  align-items: center;
+  background-color: #002233;
+  color: #fff;
+  height: 50px;
+}
+.nav-item > span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mainHeader {
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.aboutSistec {
+  background-image: url(https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__1.jpg);
+}
+.aboutHeading,
+.newsNoticehead {
+  font-size: 45px;
+  font-weight: 700;
+  color: #002233;
+  margin: 25px 0px 0 25px;
+  position: relative;
+  z-index: 1;
+}
+.headingUnderline {
+  background-color: #ff806d;
+  height: 10px;
+  width: 350px;
+  left: 1%;
+  top: 75%;
+  z-index: -1;
+  animation: headingUnderline 1.5s alternate infinite;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+.sistecImage {
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 95%;
+  height: 350px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px;
+  background: url("https://www.sistecgn.ac.in/assets/web/images/home/about/sistec-gn-bg.jpg");
+  animation: sistecImg 20s alternate infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.sistecDesc {
+  text-align: justify;
+  padding: 25px;
+}
+
+.NoticeCard {
+  height: 340px;
+  padding: 10px;
+  border-radius: 3px;
+
+  box-shadow: 5px 5px 30px 3px #c0c0c0;
+}
+.scroll-card {
+  height: 85%;
+  overflow: hidden;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.newsHeading {
+  background-image: linear-gradient(#723bcd, #5c6fdd);
+  height: 40px;
+  padding: 5px;
+  color: #fff;
+}
+.newsNoticeContainer > div:nth-child(2) {
+  margin-top: 2%;
+}
+.newsNoticeContainer {
+  margin-bottom: 3%;
+}
+.courses > ul {
+  list-style: none;
+}
+.degree {
+  margin-left: 6%;
+}
+.degree > h1 {
+  border-bottom: 2px solid black;
+}
+
+.cardPara {
+  gap: 10px;
+}
+.cardPara > span:nth-child(2) {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.Dates {
+  border: 2.5px solid #5c71de;
+  width: 55px;
+  height: 55px;
+  margin-right: 10px;
+}
+.Dates p {
+  margin: 0 0 0 0;
+  font-weight: 700;
+}
+
+.newsList {
+  padding: 10px;
+}
+.newsList > li > a {
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.scroll-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track for the scrollbar */
+.scroll-card::-webkit-scrollbar-track {
+  height: 85%;
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+.scroll-card::-webkit-scrollbar-thumb {
+  height: 10px;
+  background-image: linear-gradient(45deg, #7d8de5 50%, #5c71de 50%);
+  border-radius: 6px;
+}
+
+.parentEng {
+  background-image: url("https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__3.jpg");
+  background-repeat: no-repeat;
+}
+
+.placementCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 1/1;
+  border: 2px solid #5c71de;
+  transform: translateX(40px) rotateY(25deg) rotateX(10deg);
+}
+.placementImage > img {
+  height: 100px;
+}
+.placementCardWrap {
+  border: 8px solid #fc644d;
+}
+.placementDetails {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.placementDetails > p {
+  margin: 0;
+  font-weight: 500;
+}
+.highlightP {
+  text-transform: uppercase;
+  color: #fe553c;
+  font-weight: 600;
+}
+
+/* --------Animation Keyframs -------------*/
+@keyframes sistecImg {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes headingUnderline {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 728px) {
+  .mainNav {
+    display: none;
+  }
+}
