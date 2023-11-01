@@ -1,15 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
 * {
   font-family: poppins;
 }
+
 html,
 body {
   height: 100%;
 }
+
 .navbar-list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.mainNav {
+  position: fixed;
+  top: -150px;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+  transition: top 0.3s;
+  transform: scaleX(0);
+  /* Initial scale is 0, hiding it */
+  transform-origin: center top;
+  /* Set the transformation origin to the center */
+  animation: expandMenu 1s ease-in-out forwards;
 }
 
 .nav-item {
@@ -23,7 +40,8 @@ body {
   color: #fff;
   height: 50px;
 }
-.nav-item > span {
+
+.nav-item>span {
   font-size: 14px;
   font-weight: 500;
 }
@@ -36,6 +54,7 @@ body {
 .aboutSistec {
   background-image: url(https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__1.jpg);
 }
+
 .aboutHeading,
 .newsNoticehead {
   font-size: 45px;
@@ -45,6 +64,7 @@ body {
   position: relative;
   z-index: 1;
 }
+
 .headingUnderline {
   background-color: #ff806d;
   height: 10px;
@@ -54,9 +74,11 @@ body {
   z-index: -1;
   animation: headingUnderline 1.5s alternate infinite;
 }
+
 .relative {
   position: relative;
 }
+
 .absolute {
   position: absolute;
 }
@@ -72,6 +94,7 @@ body {
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .sistecDesc {
   text-align: justify;
   padding: 25px;
@@ -84,6 +107,7 @@ body {
 
   box-shadow: 5px 5px 30px 3px #c0c0c0;
 }
+
 .scroll-card {
   height: 85%;
   overflow: hidden;
@@ -97,26 +121,32 @@ body {
   padding: 5px;
   color: #fff;
 }
-.newsNoticeContainer > div:nth-child(2) {
+
+.newsNoticeContainer>div:nth-child(2) {
   margin-top: 2%;
 }
+
 .newsNoticeContainer {
   margin-bottom: 3%;
 }
-.courses > ul {
+
+.courses>ul {
   list-style: none;
 }
+
 .degree {
   margin-left: 6%;
 }
-.degree > h1 {
+
+.degree>h1 {
   border-bottom: 2px solid black;
 }
 
 .cardPara {
   gap: 10px;
 }
-.cardPara > span:nth-child(2) {
+
+.cardPara>span:nth-child(2) {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 16px;
@@ -129,6 +159,7 @@ body {
   height: 55px;
   margin-right: 10px;
 }
+
 .Dates p {
   margin: 0 0 0 0;
   font-weight: 700;
@@ -137,7 +168,8 @@ body {
 .newsList {
   padding: 10px;
 }
-.newsList > li > a {
+
+.newsList>li>a {
   text-decoration: none;
   color: #000;
   margin-bottom: 10px;
@@ -162,36 +194,213 @@ body {
 
 .parentEng {
   background-image: url("https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__3.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
+  padding-top: 50px;
+}
+
+.blur-cont {
+  margin-top: 10px;
+  position: relative;
+  height: 20px;
+  width: 100%;
+}
+
+.blur-effect {
+  position: absolute;
+  height: 70px;
+  background-color: #fff;
+  width: 100%;
+  z-index: 10;
+  filter: blur(20px);
+  margin-top: -20px;
+  /* Adjust the margin-top value to control the overlap */
 }
 
 .placementCard {
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-area: 1/1;
   border: 2px solid #5c71de;
-  transform: translateX(40px) rotateY(25deg) rotateX(10deg);
+  transform: perspective(700px) rotateY(30deg) rotateX(10deg);
+  margin-left: 10px;
+  background-color: #fff;
+  z-index: 1;
 }
-.placementImage > img {
+
+.placementImage>img {
   height: 100px;
 }
+
 .placementCardWrap {
+  margin-top: 50px;
   border: 8px solid #fc644d;
+  transform: perspective(800px) rotateY(-25deg) rotateX(5deg);
+  position: absolute;
+  z-index: 2;
 }
+
 .placementDetails {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
 }
-.placementDetails > p {
+
+.placementDetails>p {
   margin: 0;
   font-weight: 500;
 }
+
+.video-cover {
+  padding: 20px 0 20px 90px;
+  background-image: url("https://www.sistecgn.ac.in/assets/web/images/home/courses/courses-engg-bg.png");
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  width: 475px;
+  height: 350px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.video-div {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.video-cont-right {
+  right: 0;
+  position: absolute;
+}
+
 .highlightP {
   text-transform: uppercase;
   color: #fe553c;
   font-weight: 600;
+}
+
+.placement-bg {
+  background-image: url("https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60%;
+  padding-top: 25px;
+}
+
+/* A */
+
+/* Basic styling for the partners container */
+.partners-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for the partner images */
+.partner {
+  display: inline-block;
+  margin: 0 20px;
+  transition: transform 0.3s;
+}
+
+.partner img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Slider effect */
+.partners-slider {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.partners-slider .partner {
+  transform: translateX(0);
+  display: inline-block;
+}
+
+/* Overlay */
+.hexagon {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #3498db;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+
+.olay-row {
+  margin-bottom: -40px;
+  gap: 30px;
+}
+
+.hexagon-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hexagon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6777d2d6;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hexagon:hover {
+  background-color: #e74c3c;
+}
+
+.hexagon:hover .overlay {
+  opacity: 1;
+}
+
+.overlay p {
+  color: white;
+  text-align: center;
+}
+
+.first-olay {
+  animation: first-olay 2s alternate infinite;
+}
+
+.third-olay {
+  animation: third-olay 2s alternate infinite;
+}
+
+.second-oly-left {
+  animation: second-olay 2s alternate infinite;
+}
+
+.second-oly-right {
+  animation: second-olay-r 2s alternate infinite;
+}
+
+.recentHappContainer {
+  background: url("https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__2.jpg");
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 /* --------Animation Keyframs -------------*/
@@ -199,8 +408,69 @@ body {
   0% {
     background-position: 0% 0;
   }
+
   100% {
     background-position: 100% 0;
+  }
+}
+
+@keyframes first-olay {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes expandMenu {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes compressMenu {
+  0% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes third-olay {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes second-olay {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes second-olay-r {
+  0% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(-10px);
   }
 }
 
@@ -208,6 +478,7 @@ body {
   0% {
     margin-left: 0%;
   }
+
   100% {
     margin-left: 2%;
   }
@@ -217,4 +488,137 @@ body {
   .mainNav {
     display: none;
   }
+}
+
+/* Animation to slide partners */
+@keyframes partnerSlide {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-350%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.partners-slider .partner {
+  animation: partnerSlide 30s infinite;
+}
+
+
+
+
+
+/* Slider */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.slider {
+  display: flex;
+  transition: transform 20s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: image-transition 10s infinite;
+}
+
+.slide-content {
+  text-align: center;
+  color: #fff;
+}
+
+.slide h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  font-size: 16px;
+}
+
+.active {
+  animation: image-transition 10s infinite, text-change 10s infinite;
+}
+
+@keyframes image-transition {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-100%);
+  }
+
+  75% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes text-change {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  10%,
+  90% {
+    opacity: 0;
+  }
+}
+
+.slider-container:hover .slider {
+  animation-play-state: paused;
+}
+
+footer {
+  content: '';
+  background: rgba(0, 0, 0, 0.963);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+footer::before {
+  background: url('https://www.sistecgn.ac.in/assets/web/images/footer/footer-bg-2.jpg');
+  height: 100vh;
+  position: relative;
+}
+
+.footer-heading {
+  text-transform: uppercase;
+  color: #fe553c;
+}
+
+footer.container {
+  position: relative;
+  z-index: 2;
 }
