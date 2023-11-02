@@ -53,6 +53,7 @@ body {
 
 .aboutSistec {
   background-image: url(https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__1.jpg);
+  margin-bottom: 50px;
 }
 
 .aboutHeading,
@@ -127,7 +128,7 @@ body {
 }
 
 .newsNoticeContainer {
-  margin-bottom: 3%;
+  margin-bottom: 8%;
 }
 
 .courses>ul {
@@ -197,10 +198,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 50px;
+  margin-bottom: 20px;
 }
 
 .blur-cont {
-  margin-top: 10px;
+  margin-top: -60px;
   position: relative;
   height: 20px;
   width: 100%;
@@ -252,7 +254,6 @@ body {
 }
 
 .video-cover {
-  padding: 20px 0 20px 90px;
   background-image: url("https://www.sistecgn.ac.in/assets/web/images/home/courses/courses-engg-bg.png");
   background-repeat: no-repeat !important;
   background-size: 100% 100% !important;
@@ -261,6 +262,10 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.video-cover video {
+  height: 300px;
 }
 
 .video-div {
@@ -401,6 +406,13 @@ body {
   background: url("https://www.sistecgn.ac.in/assets/web/images/backgrounds/bg__2.jpg");
   background-size: cover !important;
   background-repeat: no-repeat !important;
+  margin-bottom: 50px;
+  height: 800px;
+  padding-top: 20px;
+}
+
+.recentHappContainer .container:nth-child(2) {
+  margin-bottom: 50px;
 }
 
 /* --------Animation Keyframs -------------*/
@@ -515,50 +527,29 @@ body {
 
 /* Slider */
 .slider-container {
-  position: relative;
-  overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .slider {
   display: flex;
-  transition: transform 20s ease;
+  transition: transform 0.5s ease;
 }
 
 .slide {
   flex: 0 0 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: image-transition 10s infinite;
-}
-
-.slide-content {
-  text-align: center;
-  color: #fff;
-}
-
-.slide h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.slide p {
-  font-size: 16px;
 }
 
 .active {
-  animation: image-transition 10s infinite, text-change 10s infinite;
+  animation: image-transition 5s infinite;
 }
 
 @keyframes image-transition {
@@ -592,9 +583,6 @@ body {
   }
 }
 
-.slider-container:hover .slider {
-  animation-play-state: paused;
-}
 
 footer {
   background: url('https://www.sistecgn.ac.in/assets/web/images/footer/footer-bg-2.jpg');
@@ -621,6 +609,8 @@ footer::before {
   color: #fe553c;
   font-size: 18px;
   font-weight: 600;
+  position: relative;
+  margin-top: 10px;
 }
 
 .ftr-ctn {
@@ -629,29 +619,81 @@ footer::before {
 
 .ftr-show p {
   color: #fff;
+  position: relative;
 }
 
 .ftr-show span {
   color: #fe553c;
+  position: relative;
 }
 
 .ftr-show {
+  position: relative;
   display: flex;
   gap: 5px;
-  height: 100%;
 }
 
-.enterprises {
+.ftr-list {
   display: flex;
   flex-direction: column;
   gap: 0;
   align-items: start;
 }
 
-.enterprises ul {
+.ftr-list ul {
+  position: relative;
   list-style: none;
   margin-bottom: 0;
   padding: 0;
   font-weight: 500;
   color: #fff;
+  line-height: 30px;
+}
+
+.side-admission {
+  position: fixed;
+  width: 50px;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: linear-gradient(135deg, rgb(233, 80, 53) 0, rgb(229, 19, 108) 100%);
+  padding: 15px 60px 15px 0px;
+  z-index: 1000;
+  text-transform: uppercase;
+  font-family: font-bold;
+  font-size: 20px;
+  writing-mode: vertical-lr;
+  color: #fff;
+}
+
+
+
+/* Counter CSS */
+.counter-ctn {
+  text-align: center;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: rgba(0, 0, 0, .4) 0px 2px 4px, rgba(0, 0, 0, .3) 0px 7px 13px -3px, rgba(0, 0, 0, .2) 0px -3px 0px inset;
+  width: 230px;
+  height: 230px;
+  padding: 25px;
+  margin: 20px auto;
+}
+.counter-wrap{
+  padding:0 130px;
+  margin-bottom: 110px;
+}
+.counter-value{
+  color: #5c71de;
+  font-size: 25px;
+  font-weight: 700;
+}
+.counter-p{
+  color:#e74c3c;
+  font-size: 18px;
 }
